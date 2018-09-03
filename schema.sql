@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS pickapaldb;
-CREATE DATABASE pickapaldb;
-
-DROP DATABASE IF EXISTS testpaldb;
-CREATE DATABASE testpaldb;
