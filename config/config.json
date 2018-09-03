@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "password": "password",
     "database": "pickapaldb",
     "port": "3306",
     "host": "localhost",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "root",
+    "password": "password",
     "database": "testpaldb",
     "host": "localhost",
     "dialect": "mysql",
