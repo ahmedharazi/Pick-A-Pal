@@ -3,32 +3,32 @@ var db = require("../models");
 module.exports = function (app) {
   // Load landing page
   app.get("/", function (req, res) {
-    db.breedFinder.findAll({}).then(function (dbPickapal) {
+    db.breedFinder.findAll({}).then(function (dbBreedfinder) {
       res.render("landing", {
         msg: "Welcome!",
-        breedFinder: dbPickapal
+        breedFinder: dbBreedfinder
       });
     });
   });
   // Load survey page on click
   app.get("/survey", function (req, res) {
-    db.breedFinder.findAll({}).then(function (dbPickapal) {
+    db.breedFinder.findAll({}).then(function (dbBreedfinder) {
       res.render("survey", {
-        breedFinder: dbPickapal
+        breedFinder: dbBreedfinder
       });
     });
   });
 
-    
-  // Load example page and pass in an example by id
-  app.get("/pickapal/:id", function (req, res) {
+  // Load survey page and pass in an example by id
+  app.get("/survey/:id", function(req, res) {
     db.breedFinder.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function (dbPickapal) {
+    }).then(function(
+      dbBreedfinder) {
       res.render("survey", {
-        breedFinder: dbPickapal
+        breedFinder: dbBreedfinder
       });
     });
   });
