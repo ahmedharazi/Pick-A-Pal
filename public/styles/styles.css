@@ -1,3 +1,51 @@
-.list-group-item {
-  line-height: 2.5;
+.survey{
+  background-image: url("https://www.petmd.com/sites/default/files/small-dog-breeds.jpg");
+  background-size: cover;
+  text-align: center;
 }
+ #surveyQuestions{
+  text-align: center;
+
+ }
+
+  .header {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 46px;
+    font-weight: bolder;
+    color: black;
+  }
+
+  .intro {
+    font-size: 18px;
+  }
+
+
+
+
+  .survey {
+    background-color: #72d3a6;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    color: #d8dfe4;
+  }
+
+  #survey {
+    border: 4px solid #e9e8d7;
+    padding: 20px;
+  }
+
+  #link {
+    text-align: right;
+  }
+
+  a {
+    color: #424547;
+  }
+
+  .modal-body {
+  
+    text-align: center;
+    font-size: 46px;
+    font-weight: bold;
+  }
+  
