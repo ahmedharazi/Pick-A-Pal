@@ -1,29 +1,40 @@
 var db = require("../models");
 
-module.exports = function(app) {
-  // Load index page
-  app.get("/", function(req, res) {
-    db.Pickapal.findAll({}).then(function(dbPickapal) {
-      res.render("index", {
+module.exports = function (app) {
+  // Load landing page
+  app.get("/", function (req, res) {
+    db.breedFinder.findAll({}).then(function (dbPickapal) {
+      res.render("landing", {
         msg: "Welcome!",
-        pickapal: dbPickapal
+        breedFinder: dbPickapal
+      });
+    });
+  });
+  // Load survey page on click
+  app.get("/survey", function (req, res) {
+    db.breedFinder.findAll({}).then(function (dbPickapal) {
+      res.render("survey", {
+        breedFinder: dbPickapal
       });
     });
   });
 
+    
   // Load example page and pass in an example by id
-  app.get("/pickapal/:id", function(req, res) {
-    db.Pickapal.findOne({ where: { id: req.params.id } }).then(function(
-      dbPickapal
-    ) {
-      res.render("pickapal", {
-        example: dbPickapal
+  app.get("/pickapal/:id", function (req, res) {
+    db.breedFinder.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbPickapal) {
+      res.render("survey", {
+        breedFinder: dbPickapal
       });
     });
   });
 
   // Render 404 page for any unmatched routes
-  app.get("*", function(req, res) {
+  app.get("*", function (req, res) {
     res.render("404");
   });
 };
