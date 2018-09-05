@@ -3,13 +3,13 @@
     "username": "root",
     "password": "root",
     "database": "pickapaldb",
-    "port": "8889",
+    "port": "3306",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "root",
     "database": "testpaldb",
     "host": "localhost",
     "dialect": "mysql",
