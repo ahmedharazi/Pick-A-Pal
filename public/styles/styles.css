@@ -39,10 +39,11 @@
   }
 
   a {
-    color: #52575a;
+    color: #424547;
   }
 
   .modal-body {
+  
     text-align: center;
     font-size: 46px;
     font-weight: bold;
