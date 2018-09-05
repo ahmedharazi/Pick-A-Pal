@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "root",
     "database": "pickapaldb",
-    "port": "3306",
+    "port": "8889",
     "host": "localhost",
     "dialect": "mysql"
   },
