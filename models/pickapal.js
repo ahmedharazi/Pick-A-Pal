@@ -22,7 +22,7 @@ module.exports = function(sequelize, DataTypes) {
   photo4_id: DataTypes.INTEGER(1),
   photo4_url: DataTypes.TEXT,
   photo5_id: DataTypes.INTEGER(1),
-  photo5_url: DataTypes.TEXT}
+  photo5_url: DataTypes.TEXT
 
   });
   return Pickapal;

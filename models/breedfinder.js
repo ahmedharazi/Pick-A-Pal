@@ -15,3 +15,4 @@ module.exports = function(sequelize, DataTypes) {
 
 //added ) at the end of q3
 //took away extra } at the bottom should end }); above return and }; below return
+//Gracias!  Changed the others too ;)
