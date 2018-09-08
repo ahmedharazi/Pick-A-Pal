@@ -3,35 +3,55 @@ var db = require("../models");
 module.exports = function (app) {
   // Load landing page
   app.get("/", function (req, res) {
-    db.breedFinder.findAll({}).then(function (dbBreedfinder) {
+    db.breedFinder.findAll({}).then(function (dbPickapal) {
       res.render("landing", {
         msg: "Welcome!",
-        breedFinder: dbBreedfinder
+        breedFinder: dbPickapal
       });
     });
   });
-  // Load survey page on click
+  // Load add a pet to your home page on click
   app.get("/survey", function (req, res) {
-    db.breedFinder.findAll({}).then(function (dbBreedfinder) {
+    db.breedFinder.findAll({}).then(function (dbPickapal) {
       res.render("survey", {
-        breedFinder: dbBreedfinder
+        breedFinder: dbPickapal
+      });
+    });
+  });
+// Load playdate survey page on click
+  app.get("/playdate", function (req, res) {
+    db.playdate.findAll({}).then(function (dbPickapal) {
+      res.render("playdate", {
+        playdate: dbPickapal
       });
     });
   });
 
-  // Load survey page and pass in an example by id
-  app.get("/survey/:id", function(req, res) {
+      // Load example page and pass in an example by id
+  app.get("/pickapal/:id", function (req, res) {
     db.breedFinder.findOne({
       where: {
         id: req.params.id
       }
-    }).then(function(
-      dbBreedfinder) {
+    }).then(function (dbPickapal) {
       res.render("survey", {
-        breedFinder: dbBreedfinder
+        breedFinder: dbPickapal
       });
     });
   });
+  // Load playdate with id
+  app.get("/pickapal/:id", function (req, res) {
+    db.playdate.findOne({
+      where: {
+        id: req.params.id
+      }
+    }).then(function (dbPickapal) {
+      res.render("survey", {
+        playdate: dbPickapal
+      });
+    });
+  });
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
