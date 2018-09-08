@@ -18,7 +18,7 @@
 	<!-- JS -->
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.js"></script>
 
-
+</head>
 
 <style>
 .survey{
@@ -26,7 +26,7 @@
   background-size: cover;
   text-align: center;
 }
- #surveyQuestions{
+ .surveyQuestions{
   text-align: center;
 
  }
@@ -63,9 +63,9 @@
     font-weight: bold;
   }
   
-	</style>
+</style>
 
-</head>
+
 
 <body>
 
@@ -80,73 +80,82 @@
         <h4>Zipcode (Required)</h4>
 		<input type="text" name="" id="zipcode" class="form-control" required>
        	<hr>
+	
 
 		<h3><strong>Question 1</strong></h3>
-		<h4>How much shedding would you tolerate?</h4>
-		<select data-placeholder="" class="chosen-select" id="q0">
-                                    <option value="1">Heavy</option>
-                                    <option value="2">Moderate</option>
-                                    <option value="3">Light</option>
-                                    <option value="4">None</option>
-		</select>
+			<h4>How would you describe your home?</h4>
+			<select data-placeholder="" class="dropdown" id="q0">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="1">1. A Home With No Outdoor Space</option>
+				<option value="2">2. A Home With a Small Yard or Nearby Park</option>
+				<option value="3">3. A Home With A Fenced-In Yard</option>
+				<option value="4">4. A Home With Abundant Outdoor Space</option>
+			</select>
 
-		<h3><strong>Question 2</strong></h3>
-		<h4>How big or small will your dog be?</h4>
-		<select data-placeholder="" class="chosen-select" id="q1">
-		                            <option value="1">Under 10lbs</option>
-                                    <option value="2">From 10 to 20lbs</option>
-                                    <option value="3">From 20 to 40lbs</option>
-                                    <option value="4">From 40 to 80lbs</option>
-                                    <option value="5">From 80 to 120lbs</option>
-		</select>
+			<h3><strong>Question 2</strong></h3>
+			<h4>How big or small will your dog be?</h4>	
+			<select data-placeholder="" class="chosen-select" id="q1">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="5">1. Under 10lbs</option>
+				<option value="10">2. From 10 to 20lbs</option>
+				<option value="15">3. From 20 to 40lbs</option>
+				<option value="20">4. From 40 to 80lbs</option>
+				<option value="25">5. From 80 to 1200lbs.................</option>
+			</select>
 
-        <h3><strong>Question 3</strong></h3>
-		<h4>How would you describe your home?</h4>
-		<select data-placeholder="" class="chosen-select" id="q2">
-		                            <option value="1">A Home With No Outdoor Space</option>
-                                    <option value="2">A Home With a Small Yard or Nearby Park</option>
-                                    <option value="3">A Home With A Fenced-In Yard</option>
-                                    <option value="4">A Home With Abundant Outdoor Space</option>
-		</select>
+			<h3><strong>Question 3</strong></h3>
+			<h4> When it comes to training your dog, what do you prefer?</h4>
+			<select data-placeholder="" class="chosen-select" id="q2">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="5">1. No training needed</option>
+				<option value="10">2. Needs Little Training and Learns Easily</option>
+				<option value="15">3. Requires Some Training</option>
+				<option value="20">4. Will Thrive With Substantial Training</option>	
+			</select>
 
-		<h3><strong>Question 4</strong></h3>
-		<h4>Will there be other pets in the home?</h4>
-		<select data-placeholder="" class="chosen-select" id="q3">
-                                    <option value="1">No other pets.</option>
-                                    <option value="2">Other dogs.</option>
-                                    <option value="3">Cats.</option>
-                                    <option value="4">Other small animals.</option>
-		</select>
+			<h3><strong>Question 4</strong></h3>
+			<h4>Will there be other pets in the home?</h4>
+			<select data-placeholder="" class="chosen-select" id="q3">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="1">1. No other pets.</option>
+				<option value="1">2. Other dogs.</option>
+				<option value="1">3. Cats.</option>
+				<option value="1">4. Other small animals..............</option>
+			</select>
 
-		<h3><strong>Question 5</strong></h3>
-		<h4>When it comes to training your dog, what do you prefer?</h4>
-		<select data-placeholder="" class="chosen-select" id="q4">
-		                            <option value="1">Needs Little Training and Learns Easily</option>
-                                    <option value="2">Requires Some Training</option>
-                                    <option value="3">Will Thrive With Substantial Training</option>
-                                    <option value="4">No training needed</option>
-		</select>
+			<h3><strong>Question 5</strong></h3>
+			<h4>How much shedding would you tolerate?</h4>
+			<select data-placeholder="" class="chosen-select" id="q4">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="5">1. None</option>
+				<option value="10">2. Light</option>
+				<option value="15">3. Moderate</option>
+				<option value="20">4. Heavy..........................</option>
+			</select>
 
-		<h3><strong>Question 6</strong></h3>
-		<h4>How vocal would your ideal dog be?</h4>
-		<select data-placeholder="" class="chosen-select" id="q5">
-			                        <option value="1">Barks On Occassion</option>
-                                    <option value="2">Relatively Quiet</option>
-                                    <option value="3">Will Alert me of Unwanted Strangers</option>
-                                    <option value="4">Has a Powerful Bark</option>
-		</select>
+			<h3><strong>Question 6</strong></h3>
+			<h4>Does the family have any of the following?</h4>
+			<select data-placeholder="" class="chosen-select" id="q5">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="1">1. Infants or the Infirmed</option>
+				<option value="1">2. Kids under 8</option>
+				<option value="1">3. Kids over 8</option>
+				<option value="1">4. None of the above...............</option>
+			</select>
 
-        <h3><strong>Question 7</strong></h3>
-		<h4>What is your budget like?</h4>
-		<select data-placeholder="" class="chosen-select" id="q6">
-			                        <option value="1">0-$100</option>
-                                    <option value="2">$100-$600</option>
-                                    <option value="3">$600-$1200</option>
-                                    <option value="4">$1200-$3600</option>
-		</select>
-        <br>
-        <br>
-        <br>
+			<h3><strong>Question 7</strong></h3>
+			<h4>What is your budget like?</h4>
+			<select data-placeholder="" class="chosen-select" id="q6">
+				<option value="" disabled selected>Choose your options></option>
+				<option value="5">1. 0-$200</option>
+				<option value="10">2. $200-$800</option>
+				<option value="15">3. $800-$1800</option>
+				<option value="20">4. $1800-$4400....................</option>
+			</select>
+			<br>
+			<br>
+			<br>
+
 
 		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"> Submit</button>
 
@@ -161,22 +170,23 @@
 		</footer>
 	</div>
 
+
 	<!-- Modal -->
 	<div id="resultsModal" class="modal fade" role="dialog">
 		<div class="modal-dialog">
 
 			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h2 class="modal-title"><strong>Best Match</strong></h2>
+				<button type="button" class="mr-auto close" data-dismiss="modal" aria-label="Close">&times;</button>
+				<div class="text-center">
+				<h2><strong>Best Match:  <class="modal-title" id="breedmatch"></strong></h2>
 				</div>
 				<div class="modal-body">
-					{{!-- //<h2 id="matchinterestedbreed">Breed that will match</h2> --}}
-					<img class="img-responsive" id="matchImg" src="" alt="">
+					<img class="img-responsive" id="image" src="" alt="">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data="modal" id="storesearch">Find a store!</button>
+					<button type="button" class="mr-auto btn btn-info" data="modal" id="storesearch">Find a store</button>
+					<button type="button" class="mr-auto btn btn-outline-light">      </button>
+					<button type="button" class="mr-auto float-right btn btn-info" data="modal" id="meetupsearch">Meetup groups for this breed in your area</button>
 				</div>
 			</div>
 
@@ -184,18 +194,17 @@
 	</div>
 
 	<script type="text/javascript">
-    //custom google search query//
-    var zipcode = $("#zipcode").val();  //need to fix zipcode variable it is showing blank doesn't matter if this function is above the other click or not. maybe afer submit .then this one?
-    
-    var queryurl = "https://www.google.com/search?source=hp&ei=FXKRW_bDIcK4sQWFh6GoAw&q=puppy+store+"+zipcode;
-    
-
+    //button using google search query for puppy stores with zip code enterd on form//
     $("#storesearch").on("click", function (){
+		   var zipcode = $("#zipcode").val().trim();
+		   var breed = $("#breedmatch").val().trim();
+   		   var queryurl = "https://www.google.com/search?source=hp&ei=FXKRW_bDIcK4sQWFh6GoAw&q=puppy+store+near+zip+code+"+zipcode;        
 				window.open(queryurl, '_blank');
                 console.log("onclickworking");
-                console.log(zipcode)  
+                console.log(zipcode);
+				console.log(breed)
 				});
-  
+
 
 		// capture form inputs
 		$("#submit").on("click", function () {
@@ -220,8 +229,8 @@
 				var userData = {
 					humanname: $("#humanname").val().trim(),
                     zipcode: $("#zipcode").val().trim(),
-                    //interestedbreed: $("#interestedbreed").val().trim(),
-					//image: $("#image").val().trim(),
+                    breedmatch: $("#breedmatch").val().trim(),
+					image: $("#image").val().trim(),
             		q0: $("#q0").val(),
                     q1: $("#q1").val(),
                     q2: $("#q2").val(),
@@ -232,28 +241,51 @@
 				
 				};
 
-                		// Chosen CSS
-		var config = {
-			".chosen-select": {},
-			".chosen-select-deselect": { allow_single_deselect: true },
-			".chosen-select-no-single": { disable_search_threshold: 10 },
-			".chosen-select-no-result": { no_results_text: "Oops, nothing found!" },
-			".chosen-select-width": { width: "95%" }
-		};
+	 console.log(userData);
 
-		photo = url("http://www.ninjazac123gaming.com/wp-content/uploads/2018/06/skill-picture-of-loins-loin-images-ubudiyah-info.jpg");
-		for (var selector in config) {
-			$(selector).chosen(config[selector]);
-		}
-				// console.log(userData);
-				// grab the url of the website
+
+	 var sum = (parseInt(userData.q0) + parseInt(userData.q1) + parseInt(userData.q2) + parseInt(userData.q3) + parseInt(userData.q4) + parseInt(userData.q5) + parseInt(userData.q6))
+				console.log(sum);
+
+	Number.prototype.inRange = function (a, b) {
+    return this >= a && this <= b;
+    };
+
+		if (sum.inRange(0,50)) [{
+			 dogname: $("#breedmatch").text("French Bulldog"),
+ 			 image: $("#image").attr("src","https://cdn.shopify.com/s/files/1/1133/5028/files/1-FBD-COLORS-1600X600.jpg?v=1519072408")
+		}]
+		else if (
+	   (sum.inRange(51,100)) [{
+			 dogname: $("#breedmatch").text("Dachshund"),
+ 			 image: $("#image").attr("src","https://www.yourpurebredpuppy.com/dogbreeds/photos-CD/dachshundsf2.jpg")
+	   }]);	
+	   	else if (
+	   (sum.inRange(101,200)) [{
+			 dogname: $("#breedmatch").text("Huskey"),
+ 			 image: $("#image").attr("src","http://www.insidedogsworld.com/wp-content/uploads/2016/12/husky10.jpg")
+	   }]);
+
+	   	else if (
+	   (sum.inRange(200,250)) [{
+			 dogname: $("#breedmatch").text("Samoyed"),
+ 			 image: $("#image").attr("src","https://lasvegas-k9.com/content/images/thumbs/0006369_samoyed_550.jpeg")
+	   }]);
+
+	   else if (
+	   (sum.inRange(251,350)) [{
+			 dogname: $("#breedmatch").text("German Shepherd"),
+ 			 image: $("#image").attr("src","https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12213218/German-Shepherd-on-White-00.jpg")
+	   }]);
+
+	 				// grab the url of the website
 				var currentURL = window.location.origin;
-				// ajax post the data to the friends api
-				$.post(currentURL + '/api/pickapal', userData, function () {
+				// ajax post the data to the pickapal api
+				$.post(currentURL + '/api/pickapal', userData, function (data) {
 					// grab the result from the ajax post so that the best match's name and photo displayed
 					$("#matchhumanName").text(data.humanname);
                     //$("#matchinterestedbreed").text(data.interestedbreed);
-					$("#matchImg").attr("src",photo);
+					//$("#matchImg").attr("src", data.image);
  					// show modal with the best match
 					$("#resultsModal").modal("toggle");
 					// alert("working");
@@ -264,10 +296,48 @@
 			return false;
 		});
 
+	// https://api.meetup.com/topics.json/?key=7436134a1ee4f567a3b405b177f&search=chihuahua // need to add ajax call, get return and call it with onclick for the button id: meetupsearch//
+
+var breed = $("#breedmatch").val().trim();
+var queryURL = "https://api.meetup.com/topics.json/?key=7436134a1ee4f567a3b405b177f&search="+breed;
+console.log(queryURL)
+var hotmess = hotmess;
+
+
+$.ajaxPrefilter( function (options) {
+        if (options.crossDomain && jQuery.support.cors) {
+          var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+          options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+          //options.url = "http://cors.corsproxy.io/url=" + options.url;
+        }
+       });
+
+    $.ajax({
+        url: queryURL,
+        method: "GET",
+        
+    })
+    .then(function (response) {
+
+        var parseresponse = (response)
+        var hotmess = (parseresponse.results);
+        console.log(parseresponse);
+        console.log(hotmess);		
+
+    });
+
+ $("#meetupsearch").on("click", function() {
+     event.preventDefault();
+	     window.open(hotmess, "_blank").document.body.innerHTML =  
+            console.log("onclickworking");
+            console.log(zipcode);
+            console.log(breed)
+ });
+
 
 	</script>
    
   </body>
 
-</html>
+
 
