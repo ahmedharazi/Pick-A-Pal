@@ -1,9 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
-  var breedFinder = sequelize.define("breedFinder", {
+  var playdate = sequelize.define("playdate", {
     humanname: DataTypes.STRING,
-    zipcode: DataTypes.TEXT,
-    interestedbreed: DataTypes.STRING,
+    dogname: DataTypes.STRING,
     image: DataTypes.TEXT,
+    zipcode: DataTypes.INTEGER(5),
     q0: DataTypes.INTEGER(1),
     q1: DataTypes.INTEGER(1),
     q2: DataTypes.INTEGER(1),
@@ -12,7 +12,7 @@ module.exports = function(sequelize, DataTypes) {
     q5: DataTypes.INTEGER(1),
     q6: DataTypes.INTEGER(1)
    });
-  return breedFinder;
+  return playdate;
 };
 
 //added ) at the end of q3
