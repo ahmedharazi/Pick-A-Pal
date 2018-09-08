@@ -2,7 +2,7 @@ module.exports = function(sequelize, DataTypes) {
   var breedFinder = sequelize.define("breedFinder", {
     humanname: DataTypes.STRING,
     zipcode: DataTypes.TEXT,
-    interestedbreed: DataTypes.STRING,
+    breedmatch: DataTypes.STRING,
     image: DataTypes.TEXT,
     q0: DataTypes.INTEGER(1),
     q1: DataTypes.INTEGER(1),

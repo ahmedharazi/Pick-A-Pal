@@ -102,6 +102,7 @@
                                     <option value="10">From 10 to 20lbs</option>
                                     <option value="15">From 20 to 40lbs</option>
                                     <option value="20">From 40 to 80lbs</option>
+                                    <option value="25">From 80 to 120lbs</option>
 		</select>
 
         <h3><strong>Question 3</strong></h3>
@@ -164,23 +165,21 @@
 			</div>
 		</footer>
 	</div>
-
+<!--need to fix so it pulls from the database instead-->
 	<!-- Modal -->
 	<div id="resultsModal" class="modal fade" role="dialog">
+		<button type="button" class="mr-auto close" data-dismiss="modal" aria-label="Close">&times;</button>
 		<div class="modal-dialog">
 
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h2 class="modal-title"><strong>Best Match</strong></h2>
+					<h2 class="modal-title"><strong>Best Match in zipcode</strong></h2>
 				</div>
 				<div class="modal-body">
-					<h2 id=""></h2>
-
-					<img class="img-responsive" id="matchImg" src="dog" alt="">
+					<h2 id="matchdogName1"></h2>
+					<img class="img-responsive" id="matchImg1" src="" alt="">
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal" id="playdate">Schedule a playdate!</button>
 				</div>
 			</div>
@@ -188,23 +187,10 @@
 		</div>
 	</div>
 
-
-	
-
 	<script type="text/javascript">
-
-	var resultDog;
-
-	var dog1= {
-		name : "huski",
-		
-	}
 
 		// capture form inputs
 		$("#submit").on("click", function () {
-
-
-		
 			// Form Validation
 			function validateForm() {
 				var isValid = true;
@@ -235,49 +221,82 @@
                     q4: $("#q4").val(),
                     q5: $("#q5").val(),
                     q6: $("#q6").val(),
+				
 				};
+				console.log(userData);
 
-				var sum = userData.parseInt(q0)+userData.parseInt(q1)+userData.parseInt(q2)+userData.parseInt(q3)+userData.parseInt(q4)+userData.parseInt(q5)+userData.parseInt(q6);
+				var sum = (parseInt(userData.q0) + parseInt(userData.q1) + parseInt(userData.q2) + parseInt(userData.q3) + parseInt(userData.q4) + parseInt(userData.q5) + parseInt(userData.q6))
 				console.log(sum);
 
+	Number.prototype.inRange = function (a, b) {
+    return this >= a && this <= b;
+    };
 
-				
+		if (sum.inRange(0,50)) [{
+			 dogname: $("#matchdogName1").text("Rusty"),
+ 			 image: $("#matchImg1").attr("src","https://cdn2-www.dogtime.com/assets/uploads/gallery/30-impossibly-cute-puppies/impossibly-cute-puppy-2.jpg")
+		}]
+		else if (
+	   (sum.inRange(51,100)) [{
+			 dogname: $("#matchdogName1").text("Burrito"),
+ 			 image: $("#matchImg1").attr("src","https://cdn7.bigcommerce.com/s-hwk0jf1j8j/images/stencil/500x659/products/118/381/puppy_burrito_no_text__39794.1462461880.jpg?c=2")
+	   }]);	
+	   	else if (
+	   (sum.inRange(101,200)) [{
+			 dogname: $("#matchdogName1").text("Genie"),
+ 			 image: $("#matchImg1").attr("src","https://cdn.shopify.com/s/files/1/1267/6891/collections/Gidget_1_large.jpg?v=1493317221")
+	   }]);
 
-                		// Chosen CSS
-		var config = {
-			".chosen-select": {},
-			".chosen-select-deselect": { allow_single_deselect: true },
-			".chosen-select-no-single": { disable_search_threshold: 10 },
-			".chosen-select-no-result": { no_results_text: "Oops, nothing found!" },
-			".chosen-select-width": { width: "95%" }
-		};
-		for (var selector in config) {
-			$(selector).chosen(config[selector]);
-		}
-				// console.log(userData);
+	   	else if (
+	   (sum.inRange(200,250)) [{
+			 dogname: $("#matchdogName1").text("Elvis"),
+ 			 image: $("#matchImg1").attr("src","http://cdn.akc.org/Marketplace/Breeds/Pembroke_Welsh_Corgi_SERP.jpg")
+	   }]);
+
+	   else if (
+	   (sum.inRange(251,350)) [{
+			 dogname: $("#matchdogName1").text("German Shepherd"),
+ 			 image: $("#matchImg1").attr("src","https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/12213218/German-Shepherd-on-White-00.jpg")
+	   }]);
+
+
 				// grab the url of the website
 				var currentURL = window.location.origin;
-				// ajax post the data to the friends api
+				// ajax post the data to the playdate api
 				$.post(currentURL + '/api2/pickapal', userData, function (data) {
 					// grab the result from the ajax post so that the best match's name and photo displayed
 					$("#matchhumanName").text(data.humanname);
                     $("#matchdogName").text(data.dogname);
 					$("#matchImg").attr("src", data.image);
- 					// show modal with the best match
-					$("#resultsModal").modal("toggle");
+ 					$("#resultsModal").modal("toggle");
 					// alert("working");
 				});
 			} else {
 				alert("Please enter all fields before submitting!");
 			}
 			return false;
-		});
 
+		// var currentURL = window.location.origin;
+				// ajax post the data to the playdate api
+				//$.get(currentURL + '/api2/pickapal', userData, function (dataget) {
+					/// grab the result from the ajax post so that the best match's name and photo displayed
+					//$("#matchhumanNameget").text(dataget.humanname);
+                   // $("#matchdogNameget").text(dataget.dogname);
+					//$("#matchImgget").attr("src", dataget.image);
+ 					// show modal with the best match
+					//$("#resultsModal").modal("toggle");
+					// alert("working");
+					//console.log (dataget);
+				
+});
+
+			
 	//custom contact form//
        $("#playdate").on("click", function (){
 				window.open("https://docs.google.com/forms/d/e/1FAIpQLSfAhafsGLYH63PIaRUBGA7mMupWGr83hmpuMN9Wf-yNFYcoIw/viewform?usp=sf_link")
                 console.log("onclickworking");
 				});
+				
 
 	</script>
 
