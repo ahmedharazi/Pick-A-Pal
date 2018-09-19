@@ -13,3 +13,5 @@ Utilizes:
 Must have a polished frontend / UI
 Meets MVC Paradigm
 Secured sensitive API key information on the server
+
+![app Image](/)
