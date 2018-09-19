@@ -16,7 +16,10 @@ IT have a polished frontend / UI
 Meets MVC Paradigm
 Secured sensitive API key information on the server
 
+![app Image](/public/styles/pic2.png)
 ![app Image](/public/styles/pic1.png)
+![app Image](/public/styles/pic3.png)
+
 
 To visit PickA-Pal webiste 
 https://thawing-river-58463.herokuapp.com/survey/
