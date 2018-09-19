@@ -15,3 +15,6 @@ Meets MVC Paradigm
 Secured sensitive API key information on the server
 
 ![app Image](/)
+
+To visit PickA-Pal webiste 
+https://thawing-river-58463.herokuapp.com/survey/
